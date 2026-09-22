@@ -59,16 +59,28 @@ The project follows these steps:
 - **Streamlit** — Web application development
 - **Matplotlib** — Visualisation
 
+
 ## Dataset
 
-The project combines data from two types of text classification sources:
+This project uses two publicly available datasets for text classification.
 
-1. **SMS Spam Dataset:** Used to identify spam and non-spam messages.
-2. **Toxic Comment Dataset:** Used to identify potentially abusive or toxic content.
+### 1. SMS Spam Collection Dataset
 
-The datasets were processed into a common structure containing the text and its corresponding classification label.
+Used to identify spam and legitimate messages.
 
-The raw datasets are not included in this repository. The trained model and vectoriser files required to run the application are stored in the `data` directory.
+- **Source:** Kaggle
+- **Link:** https://www.kaggle.com/uciml/sms-spam-collection-dataset
+
+### 2. Jigsaw Toxic Comment Classification Challenge
+
+Used to identify potentially abusive or toxic comments.
+
+- **Source:** Kaggle
+- **Link:** https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data
+
+The datasets were cleaned and combined into a unified classification format containing text and labels.
+
+The original datasets are not included in this repository. The trained TF-IDF vectoriser and Logistic Regression model files are stored in the `data` directory.
 
 Dataset licensing and usage conditions should be reviewed before redistributing or using the original datasets.
 
@@ -216,7 +228,7 @@ This project is intended to demonstrate the technical foundations of text classi
 
 ## Author
 
-**Divya**
+**Divya Mohan**
 
 Undergraduate at IIT Patna  
 Aspiring Data Scientist and Machine Learning Engineer
