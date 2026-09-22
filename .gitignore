@@ -1,5 +1,27 @@
-data/
-.ipynb_checkpoints/
-__pycache__/
+# Ignore all CSV files
+*.csv
+
+# Ignore all pickle files by default
 *.pkl
+
+# Ignore all NPZ files
 *.npz
+
+# Allow only the required model files
+!data/
+!data/tfidf_vectorizer.pkl
+!data/logistic_regression_model.pkl
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
