@@ -1,152 +1,82 @@
+# Real-Time Content Moderation & Spam Detection
 
-# 🛡️ Aegis AI — Intelligent Content Moderation & Spam Detection
+A machine learning-based web application that classifies text into three categories: clean, abusive, and spam. The project combines natural language processing, TF-IDF feature extraction, and Logistic Regression, with an interactive interface built using Streamlit.
 
-<p align="center">
-  <b>Real-Time Machine Learning System for Content Moderation and Spam Detection</b>
-</p>
+The goal of this project is to explore how machine learning can support content moderation and Trust & Safety systems.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Machine%20Learning-Scikit--learn-orange?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn">
-  <img src="https://img.shields.io/badge/Interface-Streamlit-red?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit">
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Project Status">
-</p>
+## Live Demo
 
----
+**Try the application:**  
+https://divya-aegis-ai.streamlit.app/
 
-## 📌 Overview
+**Source Code:**  
+https://github.com/divyamohan6388-droid/Real-Time-Content-Moderation
 
-**Aegis AI** is a machine learning-powered content moderation and spam detection application designed to classify user-generated text into three categories:
+## Project Overview
 
-- 🟢 **Clean** — Non-harmful and acceptable content
-- 🔴 **Abusive** — Potentially offensive or abusive content
-- 🟠 **Spam** — Promotional, misleading, or unwanted messages
+Online platforms receive large amounts of user-generated content, making manual moderation difficult to scale. This project demonstrates a basic machine learning pipeline for identifying potentially problematic text.
 
-The application combines natural language processing (NLP), TF-IDF feature extraction, and Logistic Regression to analyse text and provide classification results through an interactive Streamlit interface.
+The application classifies input messages into the following categories:
 
-This project explores how machine learning can support **Trust & Safety systems, online communities, and automated content moderation workflows**.
+- **Clean:** Non-abusive and non-spam content
+- **Abusive:** Potentially offensive or harmful language
+- **Spam:** Unwanted, promotional, or suspicious messages
 
----
+The predictions are displayed through a Streamlit web interface along with estimated class probabilities.
 
-## 🚀 Live Demo
+## Features
 
-🔗 **Streamlit App:** [Add Your Deployed App URL Here]
+- Real-time text classification
+- Three-class content moderation
+- Spam and abusive content detection
+- TF-IDF-based text feature extraction
+- Logistic Regression classification
+- Class probability visualisation
+- Interactive Streamlit dashboard
+- Session-based prediction history
 
-> The live demo link will be added after deployment.
+## Machine Learning Workflow
 
----
+The project follows these steps:
 
-## 🎯 Project Objectives
+1. Collect and combine text datasets.
+2. Standardise the labels into a common classification format.
+3. Clean the text by converting it to lowercase, removing punctuation, and normalising whitespace.
+4. Convert text into numerical features using TF-IDF.
+5. Train a Logistic Regression classifier.
+6. Evaluate the model on a held-out test dataset.
+7. Integrate the trained model into a Streamlit application.
 
-- Build a text classification system for content moderation.
-- Detect spam and potentially abusive messages.
-- Apply natural language processing techniques to text data.
-- Train and evaluate a multiclass machine learning model.
-- Display prediction results and confidence scores.
-- Develop an interactive web interface using Streamlit.
-- Explore the role of ML in Trust & Safety applications.
+## Technologies Used
 
----
+- **Python** — Programming language
+- **Pandas** — Data manipulation
+- **NumPy** — Numerical operations
+- **Scikit-learn** — Machine learning and evaluation
+- **TF-IDF** — Text feature extraction
+- **Logistic Regression** — Text classification
+- **Joblib** — Saving and loading trained models
+- **Streamlit** — Web application development
+- **Matplotlib** — Visualisation
 
-## 🧠 Machine Learning Pipeline
+## Dataset
 
-```text
-Raw Text Input
-      │
-      ▼
-Text Preprocessing
-      │
-      ├── Lowercasing
-      ├── Punctuation Removal
-      └── Whitespace Normalisation
-      │
-      ▼
-TF-IDF Feature Extraction
-      │
-      ▼
-Logistic Regression Model
-      │
-      ▼
-Text Classification
-      │
-      ├── Clean
-      ├── Abusive
-      └── Spam
-      │
-      ▼
-Prediction & Confidence Scores
-      │
-      ▼
-Streamlit Web Application
-```
+The project combines data from two types of text classification sources:
 
----
+1. **SMS Spam Dataset:** Used to identify spam and non-spam messages.
+2. **Toxic Comment Dataset:** Used to identify potentially abusive or toxic content.
 
-## 🛠️ Technologies Used
+The datasets were processed into a common structure containing the text and its corresponding classification label.
 
-| Technology | Purpose |
-|---|---|
-| Python | Core programming language |
-| Pandas | Data manipulation and preprocessing |
-| NumPy | Numerical operations |
-| Scikit-learn | Machine learning and evaluation |
-| TF-IDF | Text feature extraction |
-| Logistic Regression | Multiclass text classification |
-| Joblib | Model and vectorizer serialisation |
-| Streamlit | Interactive web application |
-| Matplotlib | Prediction probability visualisation |
+The raw datasets are not included in this repository. The trained model and vectoriser files required to run the application are stored in the `data` directory.
 
----
+Dataset licensing and usage conditions should be reviewed before redistributing or using the original datasets.
 
-## 📂 Dataset
+## Model Configuration
 
-The project combines text data from two sources:
+### TF-IDF Vectorisation
 
-### 1. SMS Spam Dataset
-
-Used to identify spam and non-spam messages.
-
-### 2. Toxic Comment Dataset
-
-Used to identify potentially abusive or toxic comments.
-
-The datasets were cleaned and transformed into a unified format containing:
-
-| Column | Description |
-|---|---|
-| `text` | Original user-generated text |
-| `label` | Classification category |
-| `clean_text` | Preprocessed text |
-
-### Dataset Processing
-
-- Combined relevant datasets.
-- Standardised label names.
-- Removed unnecessary columns.
-- Applied text preprocessing.
-- Created a unified classification dataset.
-- Split the data into training and testing sets.
-
-> Dataset licensing and usage terms should be reviewed before redistribution.
-
----
-
-## ⚙️ Model Development
-
-### Text Preprocessing
-
-The preprocessing pipeline includes:
-
-1. Converting text to lowercase.
-2. Removing punctuation.
-3. Normalising whitespace.
-4. Preparing text for feature extraction.
-
-### Feature Engineering
-
-The project uses **TF-IDF (Term Frequency–Inverse Document Frequency)** to convert text into numerical features.
-
-Configuration:
+The text was converted into numerical features using TF-IDF with the following configuration:
 
 ```python
 TfidfVectorizer(
@@ -155,11 +85,11 @@ TfidfVectorizer(
 )
 ```
 
-The model uses both unigrams and bigrams to capture individual words and short word combinations.
+The model uses unigrams and bigrams to capture individual words and short word combinations.
 
-### Classification Model
+### Logistic Regression
 
-The primary model is Logistic Regression with balanced class weights:
+The primary classification model was configured as follows:
 
 ```python
 LogisticRegression(
@@ -169,102 +99,57 @@ LogisticRegression(
 )
 ```
 
-Balanced class weights help the model account for differences in class distribution during training.
+Balanced class weights were used to account for differences in class distribution during training.
 
----
+## Model Performance
 
-## 📊 Model Performance
-
-The model was evaluated using a held-out test dataset.
+The current implementation was evaluated on a held-out test dataset.
 
 | Metric | Result |
-|---|---|
-| Training Samples | 131,790 |
-| Testing Samples | 32,948 |
-| TF-IDF Features | 10,000 |
-| Initial Logistic Regression Accuracy | Approximately 92.18% |
-| Macro F1-Score | Approximately 0.7781 |
-| Macro Recall | Approximately 0.8953 |
+|---|---:|
+| Training samples | 131,790 |
+| Testing samples | 32,948 |
+| TF-IDF features | 10,000 |
+| Logistic Regression accuracy | Approximately 92.18% |
+| Macro F1-score | Approximately 0.7781 |
+| Macro recall | Approximately 0.8953 |
 
-> Performance depends on the dataset, preprocessing pipeline, train-test split, and model configuration. These metrics are experimental results from the current implementation and should not be treated as production safety guarantees.
+These results reflect the current experimental implementation. Model performance may change depending on the dataset split, preprocessing, and training configuration.
 
-### Important Evaluation Considerations
+Accuracy alone is not sufficient for evaluating a production content moderation system. Precision, recall, false positives, false negatives, and performance across different types of content should also be considered.
 
-For a real-world moderation system, accuracy alone is insufficient. Additional evaluation should include:
-
-- Precision and recall for each class.
-- Confusion matrix analysis.
-- False positive rate.
-- False negative rate.
-- Performance on unseen and evolving content.
-- Human review of uncertain predictions.
-
----
-
-## 💻 Application Features
-
-### 🔍 Real-Time Text Classification
-
-Analyse a message and receive a predicted moderation category.
-
-### 📈 Confidence Analysis
-
-View the model's estimated class probabilities.
-
-### 🧾 Prediction History
-
-Review previously analysed messages during the application session.
-
-### 📊 Probability Visualisation
-
-Compare the model's predicted probabilities across the available categories.
-
-### 🖥️ Interactive Dashboard
-
-Use the Streamlit interface to test messages without writing additional code.
-
----
-
-## 🗂️ Project Structure
+## Project Structure
 
 ```text
-Aegis-AI/
-│
-├── data/
-│   ├── tfidf_vectorizer.pkl
-│   └── logistic_regression_model.pkl
-│
-├── notebooks/
-│   ├── 01_data_collection.ipynb
-│   ├── 02_data_preprocessing.ipynb
-│   ├── 03_model_training.ipynb
-│   └── 04_model_evaluation.ipynb
+Real-Time-Content-Moderation/
 │
 ├── app.py
-├── requirements.txt
 ├── README.md
-└── .gitignore
+├── LICENSE
+├── requirements.txt
+│
+└── data/
+    ├── tfidf_vectorizer.pkl
+    └── logistic_regression_model.pkl
 ```
 
-> Update the notebook names and folder structure to match the actual files in your repository.
+The repository does not include the original CSV datasets or NPZ files.
 
----
+## Run the Project Locally
 
-## ▶️ Run the Project Locally
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+git clone https://github.com/divyamohan6388-droid/Real-Time-Content-Moderation.git
 ```
 
-### 2. Navigate to the Project Directory
+### 2. Move into the project directory
 
 ```bash
-cd YOUR_REPOSITORY
+cd Real-Time-Content-Moderation
 ```
 
-### 3. Create a Virtual Environment
+### 3. Create a virtual environment
 
 ```bash
 python -m venv venv
@@ -276,122 +161,80 @@ Activate the environment on Windows:
 venv\Scripts\activate
 ```
 
-### 4. Install Dependencies
+### 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Run the Streamlit Application
+### 5. Run the Streamlit application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open in your browser.
+The application will open in your default browser.
 
----
+## Limitations
 
-## 📦 Requirements
+This project is an educational and portfolio implementation of machine learning-based content classification.
 
-Example `requirements.txt`:
+Some limitations include:
 
-```text
-streamlit
-scikit-learn
-pandas
-numpy
-scipy
-joblib
-matplotlib
-```
+- Predictions may contain false positives and false negatives.
+- The model may not perform consistently on unfamiliar or obfuscated text.
+- The training data may not represent every language, community, or communication style.
+- Probability scores are model estimates and should not be interpreted as verified certainty.
+- The system should not be used as the sole decision-maker for high-impact moderation decisions.
+- Further testing is required before considering a production deployment.
 
-Use the dependency versions compatible with the environment in which your models were trained.
+## Future Improvements
 
----
+- Evaluate the model using a separate, unseen dataset.
+- Improve performance on ambiguous and borderline messages.
+- Add a confidence threshold for uncertain predictions.
+- Experiment with transformer-based NLP models.
+- Add multilingual content moderation.
+- Introduce human review for uncertain predictions.
+- Add model monitoring and drift detection.
+- Implement model explainability.
+- Add automated testing and continuous integration.
+- Improve robustness against modified or obfuscated text.
 
-## 🔮 Future Improvements
+## Responsible AI Considerations
 
-- [ ] Add a confidence threshold for uncertain predictions.
-- [ ] Introduce a human-in-the-loop moderation workflow.
-- [ ] Improve performance on borderline and ambiguous messages.
-- [ ] Experiment with advanced NLP models such as transformer-based architectures.
-- [ ] Add multilingual content moderation.
-- [ ] Implement model monitoring and drift detection.
-- [ ] Add explainability techniques for model predictions.
-- [ ] Create a feedback mechanism for reviewed classifications.
-- [ ] Evaluate the model on a separate real-world test dataset.
-- [ ] Add automated testing and CI/CD.
-- [ ] Improve protection against adversarial and obfuscated text.
+Content moderation models can affect how people communicate online. A production-oriented system should consider:
 
----
+- Privacy and secure handling of user-generated content
+- Bias and fairness across different groups
+- Transparent moderation policies
+- Human review for uncertain cases
+- Regular model evaluation
+- Appropriate handling of false positives and false negatives
 
-## ⚠️ Limitations
+This project is intended to demonstrate the technical foundations of text classification and its potential application in Trust & Safety workflows.
 
-- Model predictions are not guaranteed to be correct.
-- Confidence scores represent model estimates and are not human-verified certainty.
-- The model may produce false positives or false negatives.
-- Training data may not represent every language, community, or communication style.
-- The current system should not be used as the sole decision-maker for high-impact moderation actions.
-- Production deployment would require additional privacy, security, fairness, and safety evaluation.
+## Author
 
----
+**Divya**
 
-## 🔐 Responsible AI Considerations
+Undergraduate at IIT Patna  
+Aspiring Data Scientist and Machine Learning Engineer
 
-Content moderation systems can affect how people communicate online. A responsible production system should consider:
-
-- User privacy and data protection.
-- Bias across different groups and language varieties.
-- Transparent moderation policies.
-- Human review for uncertain or high-impact decisions.
-- Regular evaluation using representative data.
-- Secure handling of user-generated content.
-
-Aegis AI is an educational and portfolio project exploring machine learning-based text classification.
-
----
-
-## 👨‍💻 Developer
-
-### Divya
-
-**Undergraduate at IIT Patna | Aspiring Data Scientist & ML Engineer**
-
-Interested in:
+Areas of interest:
 
 - Machine Learning
 - Data Science
 - Natural Language Processing
-- Statistical Modelling
+- Statistics
 - Trust & Safety Systems
 - Artificial Intelligence
 
-<p align="left">
-  <a href="https://linkedin.com/in/divya-mohan-a42b12389">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn">
-  </a>
-  <a href="https://github.com/divyamohan6388-droid">
-    <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github" alt="GitHub">
-  </a>
-</p>
+### Connect with me
 
-📧 Email: divyamohan6388@gmail.com
+- **GitHub:** https://github.com/divyamohan6388-droid
+- **LinkedIn:** https://linkedin.com/in/divya-mohan-a42b12389
 
 ---
 
-## ⭐ Acknowledgements
-
-This project was developed as part of my practical learning journey in:
-
-- Machine Learning
-- Natural Language Processing
-- Data Analytics
-- Model Evaluation
-- Streamlit Application Development
-
----
-
-<p align="center">
-  Built with Python, Machine Learning, and curiosity.
-</p>
+If you found this project useful, feel free to explore the repository and share feedback.
