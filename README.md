@@ -6,6 +6,8 @@ The goal of this project is to explore how machine learning can support content 
 
 ## Live Demo
 
+<img width="1275" height="1650" alt="Aegis AI _ Content Moderation · Streamlit_pages-to-jpg-0001" src="https://github.com/user-attachments/assets/1fb6bfe9-f368-44b4-a868-022c53a10c61" />
+
 **Try the application:**  
 https://divya-aegis-ai.streamlit.app/
 
